@@ -39,7 +39,7 @@ public class Servidor {
 	}
 
 	public void removerVeiculo(VeiculoInt veiculo) {
-		hash.remover(veiculo.getRenavam());
+		System.out.println(hash.remover(veiculo.getRenavam()));
 		atualizarLog();
 	}
 

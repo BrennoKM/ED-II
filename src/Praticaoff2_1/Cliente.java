@@ -313,7 +313,7 @@ public class Cliente {
 
 	
 	private void iniciar() {
-		int quantidade = 50; // Altere a quantidade conforme necessário
+		int quantidade = 500; // Altere a quantidade conforme necessário
 		Random random = new Random();
 
 		cadastrarVeiculo(new VeiculoInt("POG3R32", 12344, new Condutor("Icaro", "000.999.333-77"), "Kwid", 2020));

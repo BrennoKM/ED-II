@@ -82,17 +82,19 @@ public class HashColisaoEndAberto {
 	    m = novoTamanho;
 	}
 	
-	public void remover(int chave) {
+	public VeiculoInt remover(int chave) {
         int h = hash(chave);
 
         while (tabela[h] != null) {
             if (tabela[h].chave == chave) {
+            	VeiculoInt v = tabela[h].getValor();
                 tabela[h] = null; 
                 elementos--;
-                return;
+                return v;
             }
             h = (h + 1) % m;
         }
+        return null;
     }
 	
 	public No buscar (int v) {

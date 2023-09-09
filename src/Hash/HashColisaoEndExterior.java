@@ -24,7 +24,7 @@ public class HashColisaoEndExterior {
     Integer m;
     Integer elementos;
     No tabela[];
-    double fatorCargaLimite = 0.9;
+    double fatorCargaLimite = 2.0;
 
     public HashColisaoEndExterior(Integer tam) {
         elementos = 0;
@@ -95,7 +95,7 @@ public class HashColisaoEndExterior {
 	}
 
     private void redimensionarTabela() {
-        int novoTamanho = (int) (m * 2.0); // Redimensiona para um tamanho que seja duas vezes maior
+        int novoTamanho = (int) (m * 2.0); // Redimensiona 
 
         No novaTabela[] = new No[novoTamanho];
 
@@ -121,25 +121,28 @@ public class HashColisaoEndExterior {
         m = novoTamanho;
     }
 
-    public void remover(int k) {
+    public VeiculoInt remover(int k) {
         Integer h = hash(k);
         No no = tabela[h];
         No anterior = null;
-
+        VeiculoInt v = null;
         while (no != null) {
             if (no.chave == k) {
                 if (anterior == null) {
+                	v = tabela[h].getValor();
                     // O elemento a ser removido é o primeiro na lista
                     tabela[h] = no.proximo;
                 } else {
+                	v = anterior.proximo.getValor();
                     anterior.proximo = no.proximo;
                 }
                 elementos--;
-                return; // Elemento removido, saia do método
+                return v; // Elemento removido, saia do método
             }
             anterior = no;
             no = no.proximo;
         }
+        return null;
     }
 
     public No buscar(int k) {
