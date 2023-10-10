@@ -1,13 +1,17 @@
 package Hash;
 
+
+import java.math.BigInteger;
 public class GeradorNumerosPrimos {
 
     public static void main(String[] args) {
-        int numeroAtual = 2; // Iniciamos a busca a partir do número 2, o menor número primo
+        long numeroAtual = 2; // Iniciamos a busca a partir do número 2, o menor número primo
         GeradorNumerosPrimos gnp = new GeradorNumerosPrimos();
         
         System.out.println("Números primos:");
 
+        numeroAtual = 2147403633;
+        
         while (true) {
             if (gnp.ePrimo(numeroAtual)) {
                 System.out.print(numeroAtual + "\n");
@@ -17,7 +21,7 @@ public class GeradorNumerosPrimos {
     }
 
     // Método para verificar se um número é primo
-    public boolean ePrimo(int numero) {
+    public boolean ePrimo(long numero) {
         if (numero <= 1) {
             return false;
         }

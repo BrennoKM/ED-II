@@ -58,6 +58,10 @@ public class VeiculoInt {
 	public void setModelo(String modelo) {
 		this.modelo = modelo;
 	}
+	
+	public String toString(int i) {
+		return placa +"#"+renavam+"#"+condutor.getNome()+"#"+condutor.getCpf()+"#"+modelo+"#"+ano;
+	}
 
 	public String toString() {
         return "Veiculo{" +
